@@ -27,4 +27,3 @@ for item in lst:
     for i in item:
         print(i)
 
-#Using 
