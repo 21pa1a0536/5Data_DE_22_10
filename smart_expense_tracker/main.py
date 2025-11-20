@@ -10,8 +10,8 @@ def load_expenses(filename="expenses.json"):
         with open(filename, "r") as file:
             data = json.load(file)
             return data
-    except (json.JSONDecodeError, FileNotFoundError):
-        print("File you are looking for is not Found. Creating new one...")
+    except (FileNotFoundError):
+        print("File you are looking for is not Found.")
         return []
 
 
@@ -37,7 +37,7 @@ def log_and_time(func):
         print(f"{log_entry.strip()}")
         print("-"*30)
         with open("app_log.txt", "a") as log_file:
-            log_file.write(log_entry)
+            log_file.write(log_entry+"\n")
         return result
     return wrapper
 
@@ -49,7 +49,7 @@ def add_expense():
     #1.Date
     date_input = input("Enter date in (YYYY-MM-DD) Format or press \"Enter\" for today: ").strip()
     if date_input == "":
-        date_input = datetime.today().strftime("%Y-%m-%d")  
+        date_input = datetime.today().strftime("%Y-%m-%d") 
     else:
         try:
             datetime.strptime(date_input, "%Y-%m-%d")
@@ -74,7 +74,11 @@ def add_expense():
         return
     
     #4.Description
-    description = input("Enter description (optional): ").strip()
+    user_input = input("Do You want to add Description: (Yes/No)?").strip().lower()
+    if(user_input=="yes"):
+        description = input("Enter description: ").strip()
+    else:
+        description = "---"
 
     new_expense = {
         "date": date_input,

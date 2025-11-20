@@ -34,5 +34,35 @@
         "category": "Food",
         "amount": 530.0,
         "description": "Biryani"
+    },
+    {
+        "date": "2025-11-10",
+        "category": "Food",
+        "amount": 50.0,
+        "description": "Idli and Dosa"
+    },
+    {
+        "date": "2025-10-29",
+        "category": "Travel",
+        "amount": 720.0,
+        "description": "Travelled to a nearby waterfalls"
+    },
+    {
+        "date": "2025-10-27",
+        "category": "Shopping",
+        "amount": 920.0,
+        "description": "Bought New Shoes"
+    },
+    {
+        "date": "2025-11-10",
+        "category": "Bills",
+        "amount": 900.0,
+        "description": "Current Bill"
+    },
+    {
+        "date": "2025-11-20",
+        "category": "Shopping",
+        "amount": 599.0,
+        "description": "Books"
     }
 ]
